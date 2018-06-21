@@ -1,0 +1,60 @@
+<html>
+
+<h1>Add a New Player:</h1>
+<form id="add_player" action="/players" method="post">
+    First Name: 
+    <input type="text" name="fname">
+    Last Name:
+    <input type="text" name="lname">
+    <br>
+    Team: 
+    <select name='team'>
+        <option value="" selected disabled hidden>Choose Team</option>
+        {{#each team}}
+            <option value="{{team_id}}">{{team_name}}</option>
+        {{/each}}
+    </select>
+    <br>
+    Home Country:
+    <select name="country">
+        <option value="" selected disabled hidden>Choose Home Country</option>
+        {{#each country}}
+            <option value="{{country_id}}">{{country_name}}</option>
+        {{/each}}
+    </select>
+    <br>
+    Position:
+    <select name="position">
+        <option value="" selected disabled hidden>Choose Position</option>
+        {{#each position}}
+            <option value="{{position_id}}">{{side_position_name}}</option>
+        {{/each}}
+    </select>
+    <br>
+    <input type="submit" name="Submit">
+</form>
+
+<h2>Current Players:</h2>
+<table class="table table-striped">
+    <thead> 
+        <th>First Name</th> 
+        <th>Last Name</th> 
+        <th>Team</th>
+        <th>Home Country</th>
+        <th>Position</th>  
+    </thead> 
+    <tbody> 
+        {{#each player}} 
+        <tr> 
+            <td>{{first_name}}</td> 
+            <td>{{last_name}}</td> 
+            <td>{{team_name}}</td> 
+            <td>{{country_name}}</td>
+            <td>{{position}}</td>
+            <td><button onclick="deletePlayer({{player_id}})">Delete</button></td>
+            <td><a href="/players/{{player_id}}">Update</a></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+</html>

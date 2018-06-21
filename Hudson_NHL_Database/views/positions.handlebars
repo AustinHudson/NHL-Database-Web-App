@@ -1,0 +1,33 @@
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+
+
+<h1>Add a New Position:</h1>
+<form id="add_position" action="/positions" method="post">
+    Position Name: 
+    <input type="text" name="position_name">
+    Side:
+    <input type="text" name="side">
+    <br>
+    <input type="submit" name="Submit">
+</form>
+
+<h2>Current Positions:</h2>
+<table class="table table-striped">
+    <thead> 
+        <th>Side</th> 
+        <th>Name</th>  
+    </thead> 
+    <tbody> 
+        {{#each position}} 
+        <tr> 
+            <td>{{side}}</td> 
+            <td>{{position_name}}</td> 
+            <td><button onclick="deletePosition({{position_id}})">Delete</button></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+</html>

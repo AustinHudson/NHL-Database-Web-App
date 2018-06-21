@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browse Players</title>
+</head>
+<body>
+    
+    <h1>Search for a Player by Last Name:</h1>
+
+    <form id="add_team" action="/browse_players" method="get">
+        Enter Last Name: 
+        <input type="text" name="lname">
+        <br>
+        <input type="submit" name="Submit">
+    </form>
+
+
+
+    <h2>Browse Players:</h2>
+    <table class="table table-striped">
+        <thead> 
+            <th>First Name</th> 
+            <th>Last Name</th> 
+            <th>Team</th>
+        </thead> 
+        <tbody> 
+            {{#each player}} 
+            <tr> 
+                <td>{{first_name}}</td> 
+                <td>{{last_name}}</td> 
+                <td>{{team_name}}</td> 
+            </tr> 
+            {{/each}} 
+        </tbody> 
+    </table> 
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NHL Countries</title>
+</head>
+<body>
+
+<h1>Add a New Country:</h1>
+<form id="add_country" action="/countries" method="post">
+    Country Name: 
+    <input type="text" name="country_name">
+    Population:
+    <input type="text" name="population">
+    <br>
+    <input type="submit" name="Submit">
+</form>
+
+<h2>Current Countries:</h2>
+<table class="table table-striped">
+    <thead> 
+        <th>Country Name</th> 
+        <th>Population</th>  
+    </thead> 
+    <tbody> 
+        {{#each country}} 
+        <tr> 
+            <td>{{country_name}}</td> 
+            <td>{{population}}</td> 
+            <td><button onclick="deleteCountry({{country_id}})">Delete</button></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+
+</body>
+</html>

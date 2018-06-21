@@ -1,0 +1,15 @@
+<html>
+<h1>Update Previous Team for {{player.full_name}}:</h1>
+<form id="update-previous-team" action="/previous_teams" method="post">
+    
+    Previous Team:<select name="previous_team" id="team-selector">
+    	{{#each team}}
+    	<option value="{{team_id}}">{{team_name}}</option>
+    	{{/each}}
+    </select>
+    <br>
+</form>
+<button onclick="updatePreviousTeam({{player.player_id}}, {{player.team_id}})">Update</button>
+<script defer>selectTeam({{player.team_id}});</script>
+</html>
+

@@ -1,0 +1,32 @@
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+
+<h1>Add a New Team:</h1>
+<form id="add_team" action="/teams" method="post">
+    Team Name: 
+    <input type="text" name="team_name">
+    Division:
+    <input type="text" name="division">
+    <br>
+    <input type="submit" name="Submit">
+</form>
+
+<h2>Current Teams:</h2>
+<table class="table table-striped">
+    <thead> 
+        <th>Team Name</th> 
+        <th>Division</th>  
+    </thead> 
+    <tbody> 
+        {{#each team}} 
+        <tr> 
+            <td>{{team_name}}</td> 
+            <td>{{division}}</td> 
+            <td><button onclick="deleteTeam({{team_id}})">Delete</button></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+</html>

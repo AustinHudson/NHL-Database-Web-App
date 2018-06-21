@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Previous Teams</title>
+</head>
+<body>
+    <h1>Associate a Player with their previous Team:</h1>
+    <form id="prev_team" action="/previous_teams" method="post">
+    Player: 
+    <select name='player'>
+        <option value="" selected disabled hidden>Choose Player</option>
+        {{#each player}}
+            <option value="{{player_id}}">{{full_name}}</option>
+        {{/each}}
+    </select>
+    <br>
+    Team: 
+    <select name='team'>
+        <option value="" selected disabled hidden>Choose Team</option>
+        {{#each team}}
+            <option value="{{team_id}}">{{team_name}}</option>
+        {{/each}}
+    </select>
+    <input type="submit" name="Submit">
+</form>
+
+    <h2>Players and their previous Teams:</h2>
+    <table class="table table-striped">
+        <thead> 
+            <th>Player Name</th> 
+            <th>Team</th>  
+        </thead> 
+        <tbody> 
+            {{#each player_team}} 
+            <tr> 
+                <td>{{full_name}}</td> 
+                <td>{{team_name}}</td> 
+                <td><button onclick="deletePreviousTeam({{player_id}},{{team_id}})">Delete</button></td>
+                <td><a href="previous_teams/pid/{{player_id}}/tid/{{team_id}}"><button>Update</button></a></td>
+            </tr> 
+            {{/each}} 
+        </tbody> 
+    </table> 
+
+</body>
+</html>
+
+
