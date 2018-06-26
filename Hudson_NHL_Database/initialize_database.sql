@@ -1,21 +1,3 @@
-# ************************************************************
-# Data Definition Queries for NHL Database - CS340 Project
-# By: Austin Hudson
-#
-# Please note, due to the time it would take, I have not included every
-# player from every team into the database. One player from each of the 
-# 31 teams has been added to the database. 
-#
-# Sequel Pro SQL dump
-# Version 4541
-#
-# http://www.sequelpro.com/
-# https://github.com/sequelpro/sequelpro
-#
-# Host: classmysql.engr.oregonstate.edu (MySQL 5.5.5-10.1.22-MariaDB)
-# Database: cs340_hudsaust
-# Generation Time: 2018-05-01 00:47:14 +0000
-# ************************************************************
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
