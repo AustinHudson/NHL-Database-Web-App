@@ -22,11 +22,11 @@ after the information from the MySQL server is entered.
 
 2. Queries to initialize the database can be found in the initialize_database.sql file 
 
-3. Run 'npm install' in the directory where the package.json file is located. All of the necessary dependencies will be installed.
+3. Run `npm install` in the directory where the package.json file is located. All of the necessary dependencies will be installed.
 
 4. The app can now be started by running the command 'node main.js' + the port you want to run the app on.
 
-   * For Example, running the command 'node main.js 3000' means that you can access the web app at http://localhost:3000
+   * For Example, running the command `node main.js 3000` means that you can access the web app at http://localhost:3000
 
 ## Site Layout
 There are viewable pages for Players, Teams, Positions, Countries, Player's Previous Teams, and a searchable Browse Players page.
